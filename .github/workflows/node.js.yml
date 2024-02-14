@@ -39,7 +39,8 @@
               - run: npm test
 
               - name: Start MongoDB
-                run: mongod --dbpath=./data/db
+                run: npm install
+                     mongod --dbpath=./data/db
 
               - name: Run server.js
                 run: npm run dev
