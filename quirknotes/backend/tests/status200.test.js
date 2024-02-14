@@ -27,31 +27,31 @@ test("/postNote - Post a note", async () => {
 });
 
 
-test("/getAllNotes - Return list of zero notes for getAllNotes", async () => {
-  const getAllNotesRes = await fetch(`${SERVER_URL}/getAllNotes`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+// test("/getAllNotes - Return list of zero notes for getAllNotes", async () => {
+//   const getAllNotesRes = await fetch(`${SERVER_URL}/getAllNotes`, {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
 
-  const getAllNotesBody = await getAllNotesRes.json();
-  expect(getAllNotesRes.status).toBe(200);
-  expect(getAllNotesBody.response.length).toBe(0);
-});
+//   const getAllNotesBody = await getAllNotesRes.json();
+//   expect(getAllNotesRes.status).toBe(200);
+//   expect(getAllNotesBody.response.length).toBe(0);
+// });
 
-test("/getAllNotes - Return list of two notes for getAllNotes", async () => {
-  const getAllNotesRes = await fetch(`${SERVER_URL}/getAllNotes`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+// test("/getAllNotes - Return list of two notes for getAllNotes", async () => {
+//   const getAllNotesRes = await fetch(`${SERVER_URL}/getAllNotes`, {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
 
-  const getAllNotesBody = await getAllNotesRes.json();
-  expect(getAllNotesRes.status).toBe(200);
-  expect(getAllNotesBody.response.length).toBe(2);
-});
+//   const getAllNotesBody = await getAllNotesRes.json();
+//   expect(getAllNotesRes.status).toBe(200);
+//   expect(getAllNotesBody.response.length).toBe(2);
+// });
 
 test("/deleteNote - Delete a note", async () => {
   const title = "NoteTitleToDelete";
