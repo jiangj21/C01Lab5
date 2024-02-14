@@ -34,13 +34,14 @@
               - name: Use Node.js ${{ matrix.node-version }}
                 uses: actions/setup-node@v3
                 with:
-                  node-version: ${{ matrix.node-version }}
+                  node-version: ${{ matrix.node-version }}\
+                  cache: 'npm'
+                  cache-dependency-path: './server/package-lock.json'
               - run: npm i
               - run: npm test
 
               - name: Start MongoDB
-                run: npm install
-                     mongod --dbpath=./data/db
+                run: mongod --dbpath=./data/db
 
               - name: Run server.js
                 run: npm run dev
